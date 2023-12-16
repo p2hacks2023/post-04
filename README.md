@@ -1,13 +1,13 @@
 # P2HACKS2023 アピールシート 
 
 プロダクト名  
-TBD
+Chilly Daze
 
 コンセプト  
-TBD
+マップを塗りつぶし、創造力を豊かにするアプリ
 
 対象ユーザ  
-TBD
+
 
 利用の流れ  
 1. TBD
@@ -16,12 +16,15 @@ TBD
 - TBD
 
 スクリーンショット(任意)  
-TBD
+![17](https://github.com/p2hacks2023/post-04/assets/82511590/16fb4bf5-6503-42e2-aba7-7052e56f0497)
+
 
 ## 開発体制  
 
 役割分担  
-- TBD
+- 及川寛太：iOSエンジニア
+- 大津武琉：サーバーサイトエンジニア
+- 下村蒔里萌：デザイナー
 
 開発における工夫した点  
 - TBD
@@ -29,13 +32,20 @@ TBD
 ## 開発技術 
 
 利用したプログラミング言語  
-- TBD
+- Swift
+- Go
 
 利用したフレームワーク・ライブラリ  
-- TBD
+- GraphQL
+- MapKit
+- CoreLocation
 
 その他開発に使用したツール・サービス
-- TBD
+- Figma
+- Github
+- Discord
+- After Effects
+- Photoshop
 
 ## 関連リンク
 - [iOS App](https://github.com/panna-cotta-2023/ChillyDaze)
