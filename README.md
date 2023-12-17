@@ -26,9 +26,9 @@ Chilly Daze
 ## 開発体制  
 
 役割分担  
-- 及川寛太：クライアントサイドエンジニア(iOS)
-- 大津武琉：サーバーサイドエンジニア
-- 下村蒔里萌：デザイナー
+- [及川寛太](https://github.com/kantacky)：クライアントサイドエンジニア(iOS)
+- [大津武琉](https://github.com/otaken1221)：サーバーサイドエンジニア
+- [下村蒔里萌](https://student.redesigner.jp/portfolios/PF0d6df330e127a6675728b87f80033b73)：デザイナー
 
 開発における工夫した点  
 - スキーマ駆動開発を行い、デザイナー・クライアントサイドエンジニア・サーバサイドエンジニア間で、共通の認識を持つことで、開発当初から、並列に作業を行うことができた
@@ -54,11 +54,14 @@ Chilly Daze
 - Discord
 - DOVA-SYNDROME
 - Figma
+- Firebase Auth
+- Firebase Storage
 - Github
 - Google Cloud Build
 - Google Cloud Run
 - Google Cloud SQL
 - Photoshop
+- Sign in with Apple
 - Swift Package Manager
 - TestFlight
 - Xcode Cloud
