@@ -1,0 +1,172 @@
+query User {
+    user {
+        id
+        name
+        avatar {
+            name
+        }
+    }
+}
+
+query Achievements {
+    achievements {
+        id
+        name
+        displayName
+        description
+        category {
+            id
+            name
+            displayName
+        }
+    }
+}
+
+query AchievementCategories {
+    achievementCategories {
+        id
+        name
+        displayName
+    }
+}
+
+query Chills {
+    user {
+        chills {
+            id
+            traces {
+                id
+                timestamp
+                coordinate {
+                    latitude
+                    longitude
+                }
+            }
+            photo {
+                id
+                url
+                timestamp
+            }
+            distanceMeters
+        }
+    }
+}
+
+query UserAchievements {
+    user {
+        achievements {
+            id
+            name
+            displayName
+            description
+            category {
+                id
+                name
+                displayName
+            }
+        }
+    }
+}
+
+
+mutation RegisterUser(
+    $name: String!
+) {
+    registerUser(
+        input: {
+            name: $name
+        }
+    ) {
+        id
+        name
+    }
+}
+
+mutation UpdateUser(
+    $name: String
+    $avatar: String
+) {
+    updateUser(
+        input: {
+            name: $name
+            avatar: $avatar
+        }
+    ) {
+        id
+        name
+        avatar {
+            name
+        }
+    }
+}
+
+mutation StartChill(
+    $timestamp: DateTime!
+    $latitude: Float!
+    $longitude: Float!
+) {
+    startChill(
+        input: {
+            timestamp: $timestamp
+            coordinate: {
+                latitude: $latitude
+                longitude: $longitude
+            }
+        }
+    ) {
+        id
+        traces {
+            id
+            timestamp
+            coordinate {
+                latitude
+                longitude
+            }
+        }
+    }
+}
+
+mutation EndChill(
+    $id: ID!
+    $tracePoints: [TracePointInput!]!
+    $photo: PhotoInput
+    $timestamp: DateTime!
+    $distanceMeters: Float!
+) {
+    endChill(
+        input: {
+            id: $id
+            tracePoints: $tracePoints
+            photo: $photo
+            timestamp: $timestamp
+            distanceMeters: $distanceMeters
+        }
+    ) {
+        id
+        traces {
+            id
+            timestamp
+            coordinate {
+                latitude
+                longitude
+            }
+        }
+        photo {
+            id
+            timestamp
+            url
+        }
+        distanceMeters
+        newAchievements {
+            id
+            name
+            displayName
+            description
+            category {
+                id
+                name
+                displayName
+            }
+        }
+    }
+}

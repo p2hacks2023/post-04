@@ -1,0 +1,83 @@
+@startuml er_diagram
+
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feed
+skinparam linetype ortho
+
+entity "Users" {
+  * id: string
+  --
+  * name: string
+  avatar: UUID <<FK>>
+  * created_at: timestamp
+}
+
+entity "AchievementCategories" {
+  * id: UUID
+  --
+  * name: string
+  * display_name: string
+}
+
+entity "Achievements" {
+  * id: UUID
+  --
+  *name: string
+  *display_name: string
+  *description: string
+  *category_id: UUID <<FK>>
+}
+
+entity "UserAchievements" {
+  * id: UUID
+  --
+  * user_id: string <<FK>>
+  * achievement_id: UUID <<FK>>
+}
+
+entity "Chills" {
+  * id: UUID
+  --
+  * user_id: string <<FK>>
+  * created_at: timestamp
+  ended_at: timestamp
+  * distance: float
+}
+
+entity "ChillAchievements" {
+  * id: UUID
+  --
+  * chill_id: UUID <<FK>>
+  * achievement_id: UUID <<FK>>
+}
+
+entity "TracePoints" {
+  * id: UUID
+  --
+  * chill_id: UUID <<FK>>
+  * latitude: float
+  * longitude: float
+  * timestamp: timestamp
+}
+
+entity "Photos" {
+  * id: UUID
+  --
+  * chill_id: UUID <<FK>>
+  * url: string
+  * timestamp: timestamp
+}
+
+Users ||--o{ UserAchievements
+Achievements ||--o{ UserAchievements
+Users ||--o{ Chills
+Chills ||--o{ TracePoints
+Chills ||--o| Photos
+AchievementCategories ||--o{ Achievements
+Users }--|| Achievements
+Achievements }o--|| ChillAchievements
+Chills }o--|| ChillAchievements
+
+@endumlhttps://file+.vscode-resource.vscode-cdn.net/Users/takeru/p2hacks/panna-cotta-gateway/docs/diagram/er_diagram.png?version%3D1702643610596

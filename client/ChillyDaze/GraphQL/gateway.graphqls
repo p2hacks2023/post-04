@@ -1,0 +1,101 @@
+scalar DateTime
+
+directive @isAuthenticated on FIELD_DEFINITION
+
+type AchievementCategory {
+    id: ID!
+    name: String!                   # Name of the category (identifiable, e.g. "area")
+    displayName: String!            # Display name (JA) of the category
+    achievements: [Achievement!]!
+}
+
+type Achievement {
+    id: ID!
+    name: String!                   # Name of the achievement (identifiable, e.g. "area1")
+    displayName: String!            # Display name (JA) of the achievement
+    description: String!            # Description (JA) of the achievement
+    category: AchievementCategory!
+}
+
+type Coordinate {
+    latitude: Float!
+    longitude: Float!
+}
+
+type TracePoint {
+    id: ID!                 # Identifier to identify the trace point
+    timestamp: DateTime!
+    coordinate: Coordinate!
+}
+
+type Photo {
+    id: ID!         # Identifier to identify the photo
+    url: String!
+    timestamp: DateTime!
+}
+
+type Chill {
+    id: ID!
+    traces: [TracePoint!]!
+    photo: Photo
+    newAchievements: [Achievement!]!
+    distanceMeters: Float!
+}
+
+type User {
+    id: ID!
+    name: String!
+    avatar: Achievement             # Achievement using as avatar
+    chills: [Chill!]!
+    achievements: [Achievement!]!
+}
+
+type Query {
+    user: User! @isAuthenticated                    # Get current user
+    achievements: [Achievement!]! @isAuthenticated  # Get all achievements
+    achievementCategories: [AchievementCategory!]!  # Get all achievement categories
+}
+
+input RegisterUserInput {
+    name: String!    # Username
+}
+
+input UpdateUserInput {
+    name: String    # Username
+    avatar: String  # Achievement name
+}
+
+input CoordinateInput {
+    latitude: Float!
+    longitude: Float!
+}
+
+input StartChillInput {
+    timestamp: DateTime!
+    coordinate: CoordinateInput!
+}
+
+input TracePointInput {
+    timestamp: DateTime!
+    coordinate: CoordinateInput!
+}
+
+input PhotoInput {
+    url: String!
+    timestamp: DateTime!
+}
+
+input EndChillInput {
+    id: ID!                 # Chill id
+    tracePoints: [TracePointInput!]!
+    photo: PhotoInput
+    timestamp: DateTime!
+    distanceMeters: Float!
+}
+
+type Mutation {
+    registerUser(input: RegisterUserInput!): User! @isAuthenticated
+    updateUser(input: UpdateUserInput!): User! @isAuthenticated
+    startChill(input: StartChillInput!): Chill! @isAuthenticated
+    endChill(input: EndChillInput!): Chill! @isAuthenticated
+}

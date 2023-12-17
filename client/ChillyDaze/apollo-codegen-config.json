@@ -1,0 +1,21 @@
+{
+  "schemaNamespace": "Gateway",
+  "input": {
+    "operationSearchPaths": ["**/*.graphql"],
+    "schemaSearchPaths": ["**/*.graphqls"]
+  },
+  "output": {
+    "testMocks": {
+      "none": {}
+    },
+    "schemaTypes": {
+      "path": "../Gateway",
+      "moduleType": {
+        "swiftPackageManager": {}
+      }
+    },
+    "operations": {
+      "inSchemaModule": {}
+    }
+  }
+}

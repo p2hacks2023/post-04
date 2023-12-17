@@ -1,0 +1,17 @@
+.build/
+.DS_Store
+.swiftpm
+*.ipa
+*.dSYM.zip
+*.dSYM
+xcuserdata/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+apollo-ios-cli
+GoogleService-Info.plist
+

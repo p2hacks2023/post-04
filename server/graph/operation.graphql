@@ -1,0 +1,202 @@
+query User {
+  user {
+    id
+    name
+    avatar {
+      id
+      name
+      displayName
+      description
+      category {
+        id
+        name
+        displayName
+      }
+    }
+    chills {
+      id
+      traces {
+        id
+        timestamp
+        coordinate {
+          latitude
+          longitude
+        }
+      }
+      photo {
+        id
+        url
+        timestamp
+      }
+      newAchievements {
+        id
+        name
+        displayName
+        description
+        category {
+          id
+          name
+          displayName
+        }
+      }
+    }
+    achievements {
+      id
+      name
+      displayName
+      description
+      category {
+        id
+        name
+        displayName
+      }
+    }
+  }
+}
+
+query Achievements {
+  achievements {
+    id
+    name
+    displayName
+    description
+    category {
+      id
+      name
+      displayName
+    }
+  }
+}
+
+query AchievementCategories {
+  achievementCategories {
+    id
+    name
+    displayName
+    achievements {
+      id
+      name
+      displayName
+      description
+    }
+  }
+}
+
+mutation registerUser($input: RegisterUserInput!) {
+  registerUser(input: $input) {
+    id
+    name
+  }
+}
+
+mutation UpdateUser($input: UpdateUserInput!) {
+  updateUser(input: $input) {
+    id
+    name
+    avatar {
+      id
+      name
+      displayName
+      description
+      category {
+        id
+        name
+        displayName
+      }
+    }
+    chills {
+      id
+      traces {
+        id
+        timestamp
+        coordinate {
+          latitude
+          longitude
+        }
+      }
+      photo {
+        id
+        url
+        timestamp
+      }
+      newAchievements {
+        id
+        name
+        displayName
+        description
+        category {
+          id
+          name
+          displayName
+        }
+      }
+    }
+    achievements {
+      id
+      name
+      displayName
+      description
+      category {
+        id
+        name
+        displayName
+      }
+    }
+  }
+}
+
+mutation startChill($input: StartChillInput!) {
+  startChill(input: $input) {
+    id
+    traces {
+      id
+      timestamp
+      coordinate {
+        latitude
+        longitude
+      }
+    }
+  }
+}
+
+mutation endChill($input: EndChillInput!) {
+  endChill(input: $input) {
+    id
+    traces {
+      id
+      timestamp
+      coordinate {
+        latitude
+        longitude
+      }
+    }
+    photos {
+      id
+      url
+      timestamp
+    }
+    newAchievements {
+      id
+      name
+      displayName
+      description
+      category {
+        id
+        name
+        displayName
+      }
+    }
+    distanceMeters
+  }
+}
+
+mutation addTracePoints($input: TracePointsInput!) {
+  addTracePoints(input: $input) {
+    id
+    timestamp
+    coordinate {
+      latitude
+      longitude
+    }
+  }
+}
