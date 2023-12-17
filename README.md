@@ -31,7 +31,7 @@ Chilly Daze
 - 下村蒔里萌：デザイナー
 
 開発における工夫した点  
-- TBD
+- スキーマ駆動開発を行い、デザイナー・クライアントサイドエンジニア・サーバサイドエンジニア間で、共通の認識を持つことで、開発当初から、並列に作業を行うことができた
 
 ## 開発技術 
 
@@ -40,16 +40,28 @@ Chilly Daze
 - Go
 
 利用したフレームワーク・ライブラリ  
+- Apollo iOS
+- CoreLocation
+- Dependencies
+- Firebase iOS SDK
 - GraphQL
 - MapKit
-- CoreLocation
+- SwiftUI
+- The Composable Architecture
 
 その他開発に使用したツール・サービス
+- After Effects
+- Discord
+- DOVA-SYNDROME
 - Figma
 - Github
-- Discord
-- After Effects
+- Google Cloud Build
+- Google Cloud Run
+- Google Cloud SQL
 - Photoshop
+- Swift Package Manager
+- TestFlight
+- Xcode Cloud
 
 ## 関連リンク
 - [iOS App](https://github.com/panna-cotta-2023/ChillyDaze)
