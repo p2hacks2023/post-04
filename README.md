@@ -28,7 +28,7 @@ Chilly Daze
 役割分担  
 - [及川寛太](https://github.com/kantacky)：クライアントサイドエンジニア(iOS)
 - [大津武琉](https://github.com/otaken1221)：サーバーサイドエンジニア
-- [下村蒔里萌]([https://student.redesigner.jp/portfolios/PF0d6df330e127a6675728b87f80033b73](https://student.redesigner.jp/students/c54349a66b8a983c14fdd83195fa354e))：デザイナー
+- [下村蒔里萌](https://student.redesigner.jp/students/c54349a66b8a983c14fdd83195fa354e)：デザイナー
 
 開発における工夫した点  
 - スキーマ駆動開発を行い、デザイナー・クライアントサイドエンジニア・サーバサイドエンジニア間で、共通の認識を持つことで、開発当初から、並列に作業を行うことができた
